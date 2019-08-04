@@ -1,18 +1,30 @@
 <html>
 <head>
-    <title>Wacker 41 Mapboxでハザードマップをつくろー</title>
+    <title>Wacker 41</title>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />   
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
+
 </head>
 <body>
-    <div id='map' style='width: 800px; height: 600px;'></div>
+    <div id='map' style='width: 1200px; height: 600px;'></div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoieW9wZXkiLCJhIjoiY2poYTQxdnQxMDR6NTNkb2YzYnVpOWVqNyJ9.6p0uSF6W34UL7NMiDP3--Q';
         var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/yopey/cjyandohe0gg31cqt9argsbe6'
         });
+
+        
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+        map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }), 'top-left');
     </script>
 </body>
 </html>
