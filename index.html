@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Wacker 41 Mapboxでハザードマップをつくろー</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div id='map' style='width: 800px; height: 600px;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoieW9wZXkiLCJhIjoiY2poYTQxdnQxMDR6NTNkb2YzYnVpOWVqNyJ9.6p0uSF6W34UL7NMiDP3--Q';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/yopey/cjyandohe0gg31cqt9argsbe6'
+        });
+    </script>
+</body>
+</html>
